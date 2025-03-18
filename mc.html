@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Course Menu</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navigation Bar Styles */
+nav {
+    background-color: #5cb85c;
+    padding: 10px 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Cart Styles */
+.cart {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+}
+
+.cart-icon {
+    margin-right: 8px;
+}
+
+/* Hero Section Styles */
+.hero {
+    background-image: url('juice-background.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 24px;
+}
+
+/* Background Image for the Hero Section */
+.hero {
+    background-image: url('https://img.freepik.com/premium-photo/indian-lunch-dinner-main-course-food-group-includes-chana-masala-dal-roti-rice-etc_680471-138.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    height: 30vh; /* Full viewport height */
+}
+
+
+/* Shop Selection Section */
+.shop-section {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.shop-buttons button {
+    background-color: #5cb85c;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.shop-buttons button:hover {
+    background-color: #5cb85c;
+}
+
+/* Menu Section Styles */
+
+.menu-section {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.menu-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 36px;
+    color: #333;
+}
+
+.menu-category {
+    margin-bottom: 30px;
+}
+
+.menu-category h3 {
+    font-size: 24px;
+    color: #5cb85c;
+    margin-bottom: 10px;
+}
+
+.menu-category ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu-category li {
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.price {
+    font-weight: bold;
+    color: #333;
+}
+
+.menu-section {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+.menu-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 36px;
+    color: #333;
+}
+
+.menu-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.menu-item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.menu-item h3 {
+    margin-top: 0;
+    color: #5cb85c;
+}
+
+.price {
+    font-weight: bold;
+    color: #333;
+}
+
+button {
+    background-color: #5cb85c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #5cb85c;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">Main Course</a>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="jb.html">Juice & Beverages</a></li>
+                <li><a href="bs.html">Breakfast & Snacks</a></li>
+                <li><a href="#mc">Main Courses</a></li>
+                <li><a href="cart.html">View Cart</a></li>
+            </ul>
+            <div class="cart">
+                <span class="cart-icon">🛒</span>
+                <span id="cart-count">0</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>Welcome to Main Course</h1>
+        <p>Choose your favorite shop to see the menu</p>
+    </section>
+
+   <!-- Shop Selection -->
+<section id="shops" class="shop-section">
+    <h2>Select a Shop</h2>
+    <div class="shop-buttons">
+        <button onclick="showMenu('Evergreen')">Evergreen</button>
+        <button onclick="showMenu('Butty')">Butty</button>
+        <button onclick="showMenu('Classic-Biryani')">Classic Biryani</button>
+    </div>
+</section>
+
+
+    <!-- Menu Sections -->
+    <section id="menu-Evergreen" class="menu-section" style="display: none;">
+        <h2>Evergreen Menu</h2>
+    
+        <!-- Veg Indian Dishes -->
+        <div class="menu-category">
+            <h3>Veg Indian Dishes</h3>
+            <ul>
+                <li>
+                    <span><strong>Paneer Butter Masala</strong> - Cottage cheese cooked in a creamy tomato gravy. <span class="price">Rs 120</span></span>
+                    <button class="add-to-cart" data-name="Paneer Butter Masala" data-price="8.00">Add to Cart</button>
+                </li>
+                <li>
+                    <span><strong>Aloo Gobi</strong> - Potatoes and cauliflower cooked with Indian spices. <span class="price">Rs 100</span></span>
+                    <button class="add-to-cart" data-name="Aloo Gobi" data-price="6.50">Add to Cart</button>
+                </li>
+                <li>
+                    <span><strong>Dal Makhani</strong> - Slow-cooked black lentils in a rich, buttery sauce. <span class="price">Rs 110</span></span>
+                    <button class="add-to-cart" data-name="Dal Makhani" data-price="7.00">Add to Cart</button>
+                </li>
+                <li>
+                    <span><strong>Chole Masala</strong> - Spicy chickpeas cooked in a tangy tomato sauce. <span class="price">Rs 90</span></span>
+                    <button class="add-to-cart" data-name="Chole Masala" data-price="6.00">Add to Cart</button>
+                </li>
+                <li>
+                    <span><strong>Baingan Bharta</strong> - Roasted eggplant mashed with spices. <span class="price">Rs 90</span></span>
+                    <button class="add-to-cart" data-name="Baingan Bharta" data-price="6.00">Add to Cart</button>
+                </li>
+                <li>
+                    <span><strong>Vegetable Biryani</strong> - Aromatic rice cooked with mixed vegetables and spices. <span class="price">Rs 130</span></span>
+                    <button class="add-to-cart" data-name="Vegetable Biryani" data-price="9.00">Add to Cart</button>
+                </li>
+                <li>
+                    <span><strong>Palak Paneer</strong> - Spinach and cottage cheese cooked with Indian spices. <span class="price">Rs 110</span></span>
+                    <button class="add-to-cart" data-name="Palak Paneer" data-price="7.50">Add to Cart</button>
+                </li>
+                <li>
+                    <span><strong>Bhindi Masala</strong> - Okra stir-fried with onions and spices. <span class="price">Rs 100</span></span>
+                    <button class="add-to-cart" data-name="Bhindi Masala" data-price="6.50">Add to Cart</button>
+                </li>
+                <li>
+                    <span><strong>Kadai Paneer</strong> - Cottage cheese cooked with capsicum and onions in a spicy gravy. <span class="price">Rs 120</span></span>
+                    <button class="add-to-cart" data-name="Kadai Paneer" data-price="8.00">Add to Cart</button>
+                </li>
+                <li>
+                    <span><strong>Malai Kofta</strong> - Soft cottage cheese balls in a creamy sauce. <span class="price">Rs 130</span></span>
+                    <button class="add-to-cart" data-name="Malai Kofta" data-price="9.00">Add to Cart</button>
+                </li>
+            </ul>
+        </div>
+    
+        <!-- Non-Veg Indian Dishes -->
+        <div class="menu-category">
+            <h3>Non-Veg Indian Dishes</h3>
+            <ul>
+                <li>
+                    <span><strong>Chicken Tikka Masala</strong> - Grilled chicken pieces cooked in a spiced tomato sauce. <span class="price">Rs 150</span></span>
+                    <button class="add-to-cart" data-name="Chicken Tikka Masala" data-price="10.00">Add to Cart</button>
+                </li>
+                <li>
+                    <span><strong>Mutton Rogan Josh</strong> - Slow-cooked lamb in a rich, spiced gravy. <span class="price">Rs 180</span></span>
+                    <button class="add-to-cart" data-name="Mutton Rogan Josh" data-price="12.00">Add to Cart</button>
+                </li>
+                <li>
+                    <span><strong>Butter Chicken</strong> - Chicken in a creamy, buttery tomato sauce. <span class="price">Rs 160</span></span>
+                    <button class="add-to-cart" data-name="Butter Chicken" data-price="11.00">Add to Cart</button>
+                </li>
+                <li>
+                    <span><strong>Fish Curry</strong> - Fish cooked in a coconut-based curry. <span class="price">Rs 140</span></span>
+                    <button class="add-to-cart" data-name="Fish Curry" data-price="9.50">Add to Cart</button>
+                </li>
+                <li>
+                    <span><strong>Chicken Biryani</strong> - Aromatic rice cooked with spiced chicken. <span class="price">Rs 170</span></span>
+                    <button class="add-to-cart" data-name="Chicken Biryani" data-price="11.50">Add to Cart</button>
+                </li>
+                <li>
+                    <span><strong>Prawn Masala</strong> - Prawns cooked in a spiced tomato gravy. <span class="price">Rs 190</span></span>
+                    <button class="add-to-cart" data-name="Prawn Masala" data-price="13.00">Add to Cart</button>
+                </li>
+                <li>
+                    <span><strong>Mutton Biryani</strong> - Fragrant rice cooked with spiced mutton. <span class="price">Rs 200</span></span>
+                    <button class="add-to-cart" data-name="Mutton Biryani" data-price="13.50">Add to Cart</button>
+                </li>
+                <li>
+                    <span><strong>Keema Matar</strong> - Minced lamb with green peas. <span class="price">Rs 160</span></span>
+                    <button class="add-to-cart" data-name="Keema Matar" data-price="11.00">Add to Cart</button>
+                </li>
+                <li>
+                    <span><strong>Chicken Korma</strong> - Chicken in a creamy, mild curry sauce. <span class="price">Rs 150</span></span>
+                    <button class="add-to-cart" data-name="Chicken Korma" data-price="10.00">Add to Cart</button>
+                </li>
+                <li>
+                    <span><strong>Fish Fry</strong> - Marinated fish deep-fried until crispy. <span class="price">Rs 140</span></span>
+                    <button class="add-to-cart" data-name="Fish Fry" data-price="9.50">Add to Cart</button>
+                </li>
+            </ul>
+        </div>
+    
+        <!-- Breads -->
+        <div class="menu-category">
+            <h3>Breads</h3>
+            <ul>
+                <li>
+                    <span><strong>Butter Naan</strong> - Soft naan bread with butter. <span class="price">Rs 30</span></span>
+                    <button class="add-to-cart" data-name="Butter Naan" data-price="2.00">Add to Cart</button>
+                </li>
+                <li>
+                    <span><strong>Garlic Naan</strong> - Naan bread topped with garlic and butter. <span class="price">Rs 40</span></span>
+                    <button class="add-to-cart" data-name="Garlic Naan" data-price="3.00">Add to Cart</button>
+                </li>
+                <li>
+                    <span><strong>Roti</strong> - Whole wheat flatbread. <span class="price">Rs 20</span></span>
+                    <button class="add-to-cart" data-name="Roti" data-price="1.50">Add to Cart</button>
+                </li>
+                <li>
+                    <span><strong>Paratha</strong> - Flaky, layered flatbread. <span class="price">Rs 40</span></span>
+                    <button class="add-to-cart" data-name="Paratha" data-price="3.00">Add to Cart</button>
+                </li>
+                <li>
+                    <span><strong>Stuffed Paratha</strong> - Paratha stuffed with spiced potatoes or other fillings. <span class="price">Rs 60</span></span>
+                    <button class="add-to-cart" data-name="Stuffed Paratha" data-price="4.50">Add to Cart</button>
+                </li>
+                <li>
+                    <span><strong>Kulcha</strong> - flatbread cooked in tandoor. <span class="price">Rs30</span></span>
+                    <button class="add-to-cart" data-name="Kulcha" data-price="2.00">Add to Cart</button>
+                </li>
+    
+                </ul>
+            </div>
+        </section>
+
+                
+                     
+        <section id="menu-Butty" class="menu-section" style="display: none;">
+            <h2>Andhra Tiffin Menu</h2>
+        
+            <!-- Noodles -->
+            <div class="menu-category">
+                <h3>Noodles</h3>
+                <ul>
+                    <li>
+                        <span><strong>Hakka Noodles</strong> - Stir-fried noodles with vegetables and soy sauce. <span class="price">Rs 70</span></span>
+                        <button class="add-to-cart" data-name="Hakka Noodles" data-price="7.00">Add to Cart</button>
+                    </li>
+                    <li>
+                        <span><strong>Schezwan Noodles</strong> - Spicy noodles with vegetables in Schezwan sauce. <span class="price">Rs 80</span></span>
+                        <button class="add-to-cart" data-name="Schezwan Noodles" data-price="8.00">Add to Cart</button>
+                    </li>
+                    <li>
+                        <span><strong>Egg Noodles</strong> - Stir-fried noodles with scrambled eggs and vegetables. <span class="price">Rs 75</span></span>
+                        <button class="add-to-cart" data-name="Egg Noodles" data-price="7.50">Add to Cart</button>
+                    </li>
+                    <li>
+                        <span><strong>Chili Garlic Noodles</strong> - Noodles tossed with chili, garlic, and veggies. <span class="price">Rs 85</span></span>
+                        <button class="add-to-cart" data-name="Chili Garlic Noodles" data-price="8.50">Add to Cart</button>
+                    </li>
+                    <li>
+                        <span><strong>Chicken Noodles</strong> - Stir-fried noodles with chicken and vegetables. <span class="price">Rs 90</span></span>
+                        <button class="add-to-cart" data-name="Chicken Noodles" data-price="9.00">Add to Cart</button>
+                    </li>
+                    <li>
+                        <span><strong>Vegetable Chow Mein</strong> - Noodles with stir-fried vegetables and soy sauce. <span class="price">Rs 70</span></span>
+                        <button class="add-to-cart" data-name="Vegetable Chow Mein" data-price="7.00">Add to Cart</button>
+                    </li>
+                    <li>
+                        <span><strong>Prawn Noodles</strong> - Stir-fried noodles with prawns and vegetables. <span class="price">Rs 110</span></span>
+                        <button class="add-to-cart" data-name="Prawn Noodles" data-price="11.00">Add to Cart</button>
+                    </li>
+                    <li>
+                        <span><strong>Singapore Noodles</strong> - Curried noodles with vegetables and spices. <span class="price">Rs 95</span></span>
+                        <button class="add-to-cart" data-name="Singapore Noodles" data-price="9.50">Add to Cart</button>
+                    </li>
+                    <li>
+                        <span><strong>Paneer Noodles</strong> - Noodles tossed with paneer and vegetables. <span class="price">Rs 85</span></span>
+                        <button class="add-to-cart" data-name="Paneer Noodles" data-price="8.50">Add to Cart</button>
+                    </li>
+                    <li>
+                        <span><strong>Masala Noodles</strong> - Noodles with Indian spices and veggies. <span class="price">Rs 70</span></span>
+                        <button class="add-to-cart" data-name="Masala Noodles" data-price="7.00">Add to Cart</button>
+                    </li>
+                </ul>
+            </div>
+        
+            <!-- Rice -->
+            <div class="menu-category">
+                <h3>Rice</h3>
+                <ul>
+                    <li>
+                        <span><strong>Jeera Rice</strong> - Fragrant basmati rice flavored with cumin. <span class="price">Rs 50</span></span>
+                        <button class="add-to-cart" data-name="Jeera Rice" data-price="5.00">Add to Cart</button>
+                    </li>
+                    <li>
+                        <span><strong>Vegetable Pulao</strong> - Rice cooked with mixed vegetables and spices. <span class="price">Rs 80</span></span>
+                        <button class="add-to-cart" data-name="Vegetable Pulao" data-price="8.00">Add to Cart</button>
+                    </li>
+                    <li>
+                        <span><strong>Chicken Biryani</strong> - Spiced rice cooked with chicken and herbs. <span class="price">Rs 120</span></span>
+                        <button class="add-to-cart" data-name="Chicken Biryani" data-price="12.00">Add to Cart</button>
+                    </li>
+                    <li>
+                        <span><strong>Paneer Biryani</strong> - Biryani rice cooked with paneer and spices. <span class="price">Rs 110</span></span>
+                        <button class="add-to-cart" data-name="Paneer Biryani" data-price="11.00">Add to Cart</button>
+                    </li>
+                    <li>
+                        <span><strong>Hyderabadi Biryani</strong> - Spicy biryani with chicken and aromatic spices. <span class="price">Rs 130</span></span>
+                        <button class="add-to-cart" data-name="Hyderabadi Biryani" data-price="13.00">Add to Cart</button>
+                    </li>
+                    <li>
+                        <span><strong>Lemon Rice</strong> - Tangy rice flavored with lemon and curry leaves. <span class="price">Rs 70</span></span>
+                        <button class="add-to-cart" data-name="Lemon Rice" data-price="7.00">Add to Cart</button>
+                    </li>
+                    <li>
+                        <span><strong>Curd Rice</strong> - Rice mixed with yogurt and tempered spices. <span class="price">Rs 60</span></span>
+                        <button class="add-to-cart" data-name="Curd Rice" data-price="6.00">Add to Cart</button>
+                    </li>
+                    <li>
+                        <span><strong>Prawn Biryani</strong> - Biryani rice cooked with prawns and spices. <span class="price">Rs 140</span></span>
+                        <button class="add-to-cart" data-name="Prawn Biryani" data-price="14.00">Add to Cart</button>
+                    </li>
+                    <li>
+                        <span><strong>Mutton Biryani</strong> - Spiced rice cooked with tender mutton. <span class="price">Rs 150</span></span>
+                        <button class="add-to-cart" data-name="Mutton Biryani" data-price="15.00">Add to Cart</button>
+                    </li>
+                    <li>
+                        <span><strong>Egg Fried Rice</strong> - Stir-fried rice with eggs and vegetables. <span class="price">Rs 80</span></span>
+                        <button class="add-to-cart" data-name="Egg Fried Rice" data-price="8.00">Add to Cart</button>
+                    </li>
+                </ul>
+            </div>
+        
+            <!-- Pasta -->
+            <div class="menu-category">
+                <h3>Pasta</h3>
+                <ul>
+                    <li>
+                        <span><strong>Masala Macaroni</strong> - Macaroni cooked with Indian spices and vegetables. <span class="price">Rs 70</span></span>
+                        <button class="add-to-cart" data-name="Masala Macaroni" data-price="7.00">Add to Cart</button>
+                    </li>
+                    <li>
+                        <span><strong>Butter Chicken Pasta</strong> - Pasta cooked with creamy butter chicken sauce. <span class="price">Rs 120</span></span>
+                        <button class="add-to-cart" data-name="Butter Chicken Pasta" data-price="12.00">Add to Cart</button>
+                    </li>
+                    <li>
+                        <span><strong>Paneer Tikka Pasta</strong> - Pasta tossed with paneer tikka and vegetables. <span class="price">Rs 100</span></span>
+                        <button class="add-to-cart" data-name="Paneer Tikka Pasta" data-price="10.00">Add to Cart</button>
+                    </li>
+                    <li>
+                        <span><strong>Spicy Masala Pasta</strong> - Pasta cooked with Indian spices and chilies. <span class="price">Rs 80</span></span>
+                        <button class="add-to-cart" data-name="Spicy Masala Pasta" data-price="8.00">Add to Cart</button>
+                    </li>
+                    <li>
+                        <span><strong>Chicken Tikka Pasta</strong> - Pasta tossed with chicken tikka and creamy sauce. <span class="price">Rs 110</span></span>
+                        <button class="add-to-cart" data-name="Chicken Tikka Pasta" data-price="11.00">Add to Cart</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
+                        
+
+                        <section id="menu-Classic-Biryani" class="menu-section" style="display: none;">
+                            <h2>Classic Biryani Menu</h2>
+                        
+                            <!-- Biryani -->
+                            <div class="menu-category">
+                                <h3>Biryani</h3>
+                                <ul>
+                                    <li>
+                                        <span><strong>Hyderabadi Chicken Biryani</strong> - Spicy chicken biryani with saffron-infused rice. <span class="price">Rs 250</span></span>
+                                        <button class="add-to-cart" data-name="Hyderabadi Chicken Biryani" data-price="250.00">Add to Cart</button>
+                                    </li>
+                                    <li>
+                                        <span><strong>Mutton Dum Biryani</strong> - Tender mutton cooked with basmati rice and aromatic spices. <span class="price">Rs 300</span></span>
+                                        <button class="add-to-cart" data-name="Mutton Dum Biryani" data-price="300.00">Add to Cart</button>
+                                    </li>
+                                    <li>
+                                        <span><strong>Vegetable Biryani</strong> - Mixed vegetables cooked with fragrant basmati rice. <span class="price">Rs 200</span></span>
+                                        <button class="add-to-cart" data-name="Vegetable Biryani" data-price="200.00">Add to Cart</button>
+                                    </li>
+                                    <li>
+                                        <span><strong>Egg Biryani</strong> - Biryani with boiled eggs and flavorful spices. <span class="price">Rs 220</span></span>
+                                        <button class="add-to-cart" data-name="Egg Biryani" data-price="220.00">Add to Cart</button>
+                                    </li>
+                                    <li>
+                                        <span><strong>Prawn Biryani</strong> - Juicy prawns cooked with rice and spices. <span class="price">Rs 350</span></span>
+                                        <button class="add-to-cart" data-name="Prawn Biryani" data-price="350.00">Add to Cart</button>
+                                    </li>
+                                    <li>
+                                        <span><strong>Paneer Biryani</strong> - Cottage cheese and vegetables in aromatic rice. <span class="price">Rs 240</span></span>
+                                        <button class="add-to-cart" data-name="Paneer Biryani" data-price="240.00">Add to Cart</button>
+                                    </li>
+                                    <li>
+                                        <span><strong>Keema Biryani</strong> - Minced mutton with fragrant basmati rice. <span class="price">Rs 280</span></span>
+                                        <button class="add-to-cart" data-name="Keema Biryani" data-price="280.00">Add to Cart</button>
+                                    </li>
+                                    <li>
+                                        <span><strong>Fish Biryani</strong> - Fresh fish cooked with spices and basmati rice. <span class="price">Rs 320</span></span>
+                                        <button class="add-to-cart" data-name="Fish Biryani" data-price="320.00">Add to Cart</button>
+                                    </li>
+                                    <li>
+                                        <span><strong>Beef Biryani</strong> - Tender beef pieces with basmati rice. <span class="price">Rs 300</span></span>
+                                        <button class="add-to-cart" data-name="Beef Biryani" data-price="300.00">Add to Cart</button>
+                                    </li>
+                                    <li>
+                                        <span><strong>Kashmiri Biryani</strong> - Biryani with dry fruits and nuts. <span class="price">Rs 270</span></span>
+                                        <button class="add-to-cart" data-name="Kashmiri Biryani" data-price="270.00">Add to Cart</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        
+                            <!-- Starters -->
+                            <div class="menu-category">
+                                <h3>Starters</h3>
+                                <ul>
+                                    <li>
+                                        <span><strong>Chicken Tikka</strong> - Marinated chicken grilled to perfection. <span class="price">Rs 150</span></span>
+                                        <button class="add-to-cart" data-name="Chicken Tikka" data-price="150.00">Add to Cart</button>
+                                    </li>
+                                    <li>
+                                        <span><strong>Paneer Tikka</strong> - Grilled cottage cheese with spices. <span class="price">Rs 130</span></span>
+                                        <button class="add-to-cart" data-name="Paneer Tikka" data-price="130.00">Add to Cart</button>
+                                    </li>
+                                    <li>
+                                        <span><strong>Hara Bhara Kebab</strong> - Spinach and peas kebab. <span class="price">Rs 120</span></span>
+                                        <button class="add-to-cart" data-name="Hara Bhara Kebab" data-price="120.00">Add to Cart</button>
+                                    </li>
+                                    <li>
+                                        <span><strong>Fish Amritsari</strong> - Spiced batter-fried fish. <span class="price">Rs 180</span></span>
+                                        <button class="add-to-cart" data-name="Fish Amritsari" data-price="180.00">Add to Cart</button>
+                                    </li>
+                                    <li>
+                                        <span><strong>Seekh Kebab</strong> - Minced meat kebabs grilled on skewers. <span class="price">Rs 170</span></span>
+                                        <button class="add-to-cart" data-name="Seekh Kebab" data-price="170.00">Add to Cart</button>
+                                    </li>
+                                    <li>
+                                        <span><strong>Veg Manchurian</strong> - Fried vegetable balls in spicy sauce. <span class="price">Rs 110</span></span>
+                                        <button class="add-to-cart" data-name="Veg Manchurian" data-price="110.00">Add to Cart</button>
+                                    </li>
+                                    <li>
+                                        <span><strong>Tandoori Chicken</strong> - Chicken marinated in yogurt and spices. <span class="price">Rs 190</span></span>
+                                        <button class="add-to-cart" data-name="Tandoori Chicken" data-price="190.00">Add to Cart</button>
+                                    </li>
+                                    <li>
+                                        <span><strong>Vegetable Pakora</strong> - Mixed vegetable fritters. <span class="price">Rs 90</span></span>
+                                        <button class="add-to-cart" data-name="Vegetable Pakora" data-price="90.00">Add to Cart</button>
+                                    </li>
+                                    <li>
+                                        <span><strong>Masala Papad</strong> - Crisp papad topped with chopped vegetables. <span class="price">Rs 60</span></span>
+                                        <button class="add-to-cart" data-name="Masala Papad" data-price="60.00">Add to Cart</button>
+                                    </li>
+                                    <li>
+                                        <span><strong>Chicken Malai Tikka</strong> - Creamy and mildly spiced chicken. <span class="price">Rs 160</span></span>
+                                        <button class="add-to-cart" data-name="Chicken Malai Tikka" data-price="160.00">Add to Cart</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        
+                            <!-- Rolls -->
+                            <div class="menu-category">
+                                <h3>Rolls</h3>
+                                <ul>
+                                    <li>
+                                        <span><strong>Chicken Kathi Roll</strong> - Grilled chicken wrapped in a paratha. <span class="price">Rs 100</span></span>
+                                        <button class="add-to-cart" data-name="Chicken Kathi Roll" data-price="100.00">Add to Cart</button>
+                                    </li>
+                                    <li>
+                                        <span><strong>Paneer Kathi Roll</strong> - Paneer wrapped in a paratha. <span class="price">Rs 90</span></span>
+                                        <button class="add-to-cart" data-name="Paneer Kathi Roll" data-price="90.00">Add to Cart</button>
+                                    </li>
+                                    <li>
+                                        <span><strong>Egg Roll</strong> - Scrambled eggs wrapped in a paratha. <span class="price">Rs 80</span></span>
+                                        <button class="add-to-cart" data-name="Egg Roll" data-price="80.00">Add to Cart</button>
+                                    </li>
+                                    <li>
+                                        <span><strong>Veg Roll</strong> - Mixed vegetables wrapped in a paratha. <span class="price">Rs 70</span></span>
+                                        <button class="add-to-cart" data-name="Veg Roll" data-price="70.00">Add to Cart</button>
+                                    </li>
+                                    <li>
+                                        <span><strong>Mutton Seekh Roll</strong> - Spicy minced mutton wrapped in a paratha. <span class="price">Rs 120</span></span>
+                                        <button class="add-to-cart" data-name="Mutton Seekh Roll" data-price="120.00">Add to Cart</button>
+                                    </li>
+                                        </ul>
+                                    </div>
+                                </section>
+                                
+
+    <!-- JavaScript -->
+    <script src="cart.js"></script>
+
+    <script>
+        function showMenu(shop) {
+            // Hide all menus
+            document.getElementById('menu-Evergreen').style.display = 'none';
+            document.getElementById('menu-Butty').style.display = 'none';
+            document.getElementById('menu-Classic-Biryani').style.display = 'none';
+
+            // Show selected shop's menu
+            document.getElementById(`menu-${shop}`).style.display = 'block';
+        }
+    </script>
+    <script>
+        // Function to add item to cart
+        function addToCart(name, price) {
+            // Get cart from local storage, or create a new empty array if none exists
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+            // Check if the item is already in the cart
+            let item = cart.find(item => item.name === name);
+            if (item) {
+                // If item exists, increase its quantity
+                item.quantity += 1;
+            } else {
+                // If not, add a new item to the cart
+                cart.push({ name, price, quantity: 1 });
+            }
+    
+            // Save the updated cart to local storage
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+        }
+    
+        // Function to update cart count in the navigation bar
+        function updateCartCount() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let cartCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+            document.getElementById('cart-count').innerText = cartCount;
+        }
+    
+        // Attach event listeners to all "Add to Cart" buttons
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.add-to-cart').forEach(button => {
+                button.addEventListener('click', () => {
+                    const name = button.getAttribute('data-name');
+                    const price = parseFloat(button.getAttribute('data-price'));
+                    addToCart(name, price);
+                });
+            });
+    
+            // Update cart count on page load
+            updateCartCount();
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juices & Beverages Menu</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navigation Bar Styles */
+nav {
+    background-color: #5cb85c;
+    padding: 10px 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Cart Styles */
+.cart {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+}
+
+.cart-icon {
+    margin-right: 8px;
+}
+
+/* Hero Section Styles */
+.hero {
+    background-image: url('juice-background.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 24px;
+}
+
+/* Background Image for the Hero Section */
+.hero {
+    background-image: url('https://images.squarespace-cdn.com/content/v1/62e7a92f066fa3730dcd4604/7d6ebe47-eabd-4389-9cb3-3779d005f375/v2-2onli-uymlq.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    height: 30vh; /* Full viewport height */
+}
+
+
+/* Shop Selection Section */
+.shop-section {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.shop-buttons button {
+    background-color: #5cb85c;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.shop-buttons button:hover {
+    background-color: #5cb85c;
+}
+
+/* Menu Section Styles */
+
+.menu-section {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.menu-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 36px;
+    color: #333;
+}
+
+.menu-category {
+    margin-bottom: 30px;
+}
+
+.menu-category h3 {
+    font-size: 24px;
+    color: #5cb85c;
+    margin-bottom: 10px;
+}
+
+.menu-category ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu-category li {
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.price {
+    font-weight: bold;
+    color: #333;
+}
+
+.menu-section {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+.menu-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 36px;
+    color: #333;
+}
+
+.menu-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.menu-item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.menu-item h3 {
+    margin-top: 0;
+    color: #5cb85c;
+}
+
+.price {
+    font-weight: bold;
+    color: #333;
+}
+
+button {
+    background-color: #5cb85c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #5cb85c;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">Juice & Beverages</a>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="#jb">Juice & Beverages</a></li>
+                <li><a href="bs.html">Breakfast & Snacks</a></li>
+                <li><a href="mc.html">Main Courses</a></li>
+                <li><a href="cart.html">View Cart</a></li>
+            </ul>
+            <div class="cart">
+                <span class="cart-icon">🛒</span>
+                <span id="cart-count">0</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+<section id="home" class="hero">
+    <h1>Welcome to Juice & Beverages</h1>
+    <p>Choose your favorite shop to see the menu</p>
+</section>
+
+<!-- Shop Selection -->
+<section id="shops" class="shop-section">
+    <h2>Select a Shop</h2>
+    <div class="shop-buttons">
+        <button onclick="showMenu('sunny-days')">Sunny Days</button>
+        <button onclick="showMenu('irani-chai')">Irani Chai</button>
+        <button onclick="showMenu('duck-donalds')">Duck Donald's</button>
+    </div>
+</section>
+
+<section id="menu-sunny-days" class="menu-section" style="display: none;">
+    <h2>Sunny Days Menu</h2>
+    <div class="menu-category">
+            
+                <!-- Juices -->
+                <div class="menu-category">
+                    <h3>Juices</h3>
+                    <ul>
+                        <li>
+                            <span><strong>Orange Juice</strong> - Freshly squeezed oranges. <span class="price">Rs 30</span></span>
+                            <button class="add-to-cart" data-name="Orange Juice" data-price="30">Add to Cart</button>
+                        </li>
+                        <li>
+                            <span><strong>Apple Juice</strong> - Crisp and refreshing apple juice. <span class="price">Rs 50</span></span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </li>
+                        <li>
+                            <span><strong>Mango Smoothie</strong> - Mango puree blended with yogurt. <span class="price">Rs 60</span></span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </li>
+                        <li>
+                            <span><strong>Pineapple Juice</strong> - Sweet and tangy pineapple juice. <span class="price">Rs 50</span></span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </li>
+                        <li>
+                            <span><strong>Carrot Juice</strong> - Freshly pressed carrots with a hint of ginger. <span class="price">Rs 60</span></span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </li>
+                        <li>
+                            <span><strong>Watermelon Juice</strong> - Juicy watermelon with a touch of mint.. <span class="price">Rs 30</span></span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </li>
+                        <li>
+                            <span><strong>Mixed Berry Juice</strong> - A blend of strawberries, blueberries, and raspberries. <span class="price">Rs 50</span></span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </li>
+                        <li>
+                            <span><strong>Pomegranate Juice</strong> - Pure and rich pomegranate juice. <span class="price">Rs 50</span></span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </li>
+                        <li>
+                            <span><strong>Grapefruit Juice</strong> - Freshly squeezed grapefruit with a hint of honey. <span class="price">Rs 60</span></span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </li>
+                        <li>
+                            <span><strong>Cucumber Lemonade</strong> - Refreshing cucumber mixed with lemonade. <span class="price">Rs 40</span></span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </li>
+                        <!-- Add more items as needed -->
+                    </ul>
+                </div>
+            
+                <!-- Tea -->
+                <div class="menu-category">
+                    <h3>Tea</h3>
+                    <ul>
+                        <li>
+                            <span><strong>Normal tea</strong> - Hot and refreshing milk tea. <span class="price">Rs 15</span></span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </li>
+                        <li>
+                            <span><strong>Green Tea</strong> - Steamed green tea leaves for a mild flavor. <span class="price">Rs 20</span></span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </li>
+                        <li>
+                            <span><strong>Masala tea</strong> - Spiced tea with steamed milk and a hint of cinnamon. <span class="price">Rs 25</span></span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </li>
+                        <li>
+                            <span><strong>Herbal Tea</strong> - A soothing blend of chamomile, mint, and lavender. <span class="price">Rs 30</span></span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </li>
+                        <li>
+                            <span><strong>Elaichi tea</strong> - Frothy green tea powder mixed with steamed milk. <span class="price">Rs 20</span></span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </li>
+                        <li>
+                            <span><strong>Classic Iced Tea</strong> - Cold and refreshing black tea with lemon. <span class="price">Rs 20</span></span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </li>
+                        <li>
+                            <span><strong>Rose Tea</strong> - Hot and refreshing milk tea with a touch of rose. <span class="price">Rs 35</span></span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </li>
+                        <li>
+                            <span><strong>Malai Tea</strong> - Soothing milk tea with malai. <span class="price">Rs 35</span></span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </li>
+                        <li>
+                            <span><strong>Chocolate Tea</strong> - Cold and refreshing iced tea with dark chocolates. <span class="price">Rs 40</span></span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </li>
+                        <li>
+                            <span><strong>Lemon Tea</strong> - Cold and refreshing black tea with lemon and pudina leaves. <span class="price">Rs 35</span></span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </li>
+                        <!-- Add more items as needed -->
+                    </ul>
+                </div>
+            
+                <!-- Coffee -->
+                <div class="menu-category">
+                    <h3>Coffee</h3>
+                    <ul>
+                        <li>
+                            <span><strong>Espresso</strong> - Strong and bold shot of coffee. <span class="price">Rs 50</span></span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </li>
+                        <li>
+                            <span><strong>Cappuccino</strong> - Espresso with steamed milk and a layer of foam. <span class="price">Rs 60</span></span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </li>
+                        <li>
+                            <span><strong>Latte</strong> - Smooth espresso mixed with steamed milk. <span class="price">Rs 70</span></span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </li>
+                        <li>
+                            <span><strong>Mocha</strong> - Espresso with chocolate and steamed milk. <span class="price">Rs 80</span></span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </li>
+                        <li>
+                            <span><strong>Americano</strong> - Espresso diluted with hot water. <span class="price">Rs 90</span></span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </li>
+                        <li>
+                        <span><strong>Cold Brew Coffee</strong> - Slow-brewed cold coffee for a smooth taste. <span class="price">Rs 100</span></span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </li>
+                        <li>
+                            <span><strong>Iced Coffee</strong> - Chilled coffee served over ice. <span class="price">Rs 80</span></span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </li>
+                        <li>
+                            <span><strong>Macchiato</strong> - Espresso with a dollop of steamed milk. <span class="price">Rs 70</span></span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </li>
+                        <li>
+                            <span><strong>Flat White</strong> - Espresso with microfoam milk. <span class="price">Rs 80</span></span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </li>
+                        <li>
+                            <span><strong>Affogato</strong> - A shot of espresso poured over vanilla ice cream. <span class="price">Rs 90</span></span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </li>
+                        <!-- Add more items as needed -->
+                    </ul>
+                </div>
+            
+                <!-- Ice Cream -->
+                <div class="menu-category">
+                    <h3>Ice Cream</h3>
+                    <ul>
+                        <li>
+                            <span><strong>Vanilla Ice Cream</strong> - Classic creamy vanilla. <span class="price">Rs 40</span></span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </li>
+                        <li>
+                            <span><strong>Chocolate Ice Cream</strong> - Rich and smooth chocolate flavor. <span class="price">Rs 50</span></span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </li>
+                        <li>
+                            <span><strong>Strawberry Ice Cream</strong> - Sweet and fruity strawberry. <span class="price">Rs 45</span></span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </li>
+                        <li>
+                            <span><strong>Mint Chocolate Chip</strong> - Cool mint with chocolate chips. <span class="price">Rs 60</span></span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </li>
+                        <li>
+                            <span><strong>Cookie Dough Ice Cream</strong> - Vanilla ice cream with chunks of cookie dough. <span class="price">Rs 70</span></span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </li>
+                        <li>
+                            <span><strong>Rocky Road Ice Cream</strong> - Chocolate ice cream with marshmallows and nuts. <span class="price">Rs 80</span></span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </li>
+                        <li>
+                            <span><strong>Butter Pecan Ice Cream</strong> - Creamy ice cream with toasted pecans. <span class="price">Rs 80</span></span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </li>
+                        <li>
+                            <span><strong>Coffee Ice Cream</strong> - Rich coffee-flavored ice cream. <span class="price">Rs 60</span></span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </li>
+                        <li>
+                            <span><strong>Mango Sorbet</strong> - Refreshing and fruity mango sorbet. <span class="price">Rs 70</span></span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </li>
+                        <li>
+                            <span><strong>Pistachio Ice Cream</strong> - Nutty and creamy pistachio flavor. <span class="price">Rs 90</span></span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </li>
+                        <!-- Add more items as needed -->
+                    </ul>
+                </div>
+            </section>
+
+            <section id="menu-irani-chai" class="menu-section" style="display: none;">
+                <h2>Irani Chai Menu</h2>
+                    
+                        <!-- Tea -->
+                        <div class="menu-category">
+                            <h3>Tea</h3>
+                            <ul>
+                                <li>
+                                    <span><strong>Normal tea</strong> - Hot and refreshing milk tea. <span class="price">Rs 15</span></span>
+                                    <button class="add-to-cart">Add to Cart</button>
+                                </li>
+                                <li>
+                                    <span><strong>Green Tea</strong> - Steamed green tea leaves for a mild flavor. <span class="price">Rs 20</span></span>
+                                    <button class="add-to-cart">Add to Cart</button>
+                                </li>
+                                <li>
+                                    <span><strong>Masala tea</strong> - Spiced tea with steamed milk and a hint of cinnamon. <span class="price">Rs 25</span></span>
+                                    <button class="add-to-cart">Add to Cart</button>
+                                </li>
+                                <li>
+                                    <span><strong>Herbal Tea</strong> - A soothing blend of chamomile, mint, and lavender. <span class="price">Rs 30</span></span>
+                                    <button class="add-to-cart">Add to Cart</button>
+                                </li>
+                                <li>
+                                    <span><strong>Elaichi tea</strong> - Frothy green tea powder mixed with steamed milk. <span class="price">Rs 20</span></span>
+                                    <button class="add-to-cart">Add to Cart</button>
+                                </li>
+                                <li>
+                                    <span><strong>Classic Iced Tea</strong> - Cold and refreshing black tea with lemon. <span class="price">Rs 20</span></span>
+                                    <button class="add-to-cart">Add to Cart</button>
+                                </li>
+                                <li>
+                                    <span><strong>Rose Tea</strong> - Hot and refreshing milk tea with a touch of rose. <span class="price">Rs 35</span></span>
+                                    <button class="add-to-cart">Add to Cart</button>
+                                </li>
+                                <li>
+                                    <span><strong>Malai Tea</strong> - Soothing milk tea with malai. <span class="price">Rs 35</span></span>
+                                    <button class="add-to-cart">Add to Cart</button>
+                                </li>
+                                <li>
+                                    <span><strong>Chocolate Tea</strong> - Cold and refreshing iced tea with dark chocolates. <span class="price">Rs 40</span></span>
+                                    <button class="add-to-cart">Add to Cart</button>
+                                </li>
+                                <li>
+                                    <span><strong>Lemon Tea</strong> - Cold and refreshing black tea with lemon and pudina leaves. <span class="price">Rs 35</span></span>
+                                    <button class="add-to-cart">Add to Cart</button>
+                                </li>
+                                <!-- Add more items as needed -->
+                            </ul>
+                        </div>
+                    
+                        <!-- Coffee -->
+                        <div class="menu-category">
+                            <h3>Coffee</h3>
+                            <ul>
+                                <li>
+                                    <span><strong>Espresso</strong> - Strong and bold shot of coffee. <span class="price">Rs 50</span></span>
+                                    <button class="add-to-cart">Add to Cart</button>
+                                </li>
+                                <li>
+                                    <span><strong>Cappuccino</strong> - Espresso with steamed milk and a layer of foam. <span class="price">Rs 60</span></span>
+                                    <button class="add-to-cart">Add to Cart</button>
+                                </li>
+                                <li>
+                                    <span><strong>Latte</strong> - Smooth espresso mixed with steamed milk. <span class="price">Rs 70</span></span>
+                                    <button class="add-to-cart">Add to Cart</button>
+                                </li>
+                                <li>
+                                    <span><strong>Mocha</strong> - Espresso with chocolate and steamed milk. <span class="price">Rs 80</span></span>
+                                    <button class="add-to-cart">Add to Cart</button>
+                                </li>
+                                <li>
+                                    <span><strong>Americano</strong> - Espresso diluted with hot water. <span class="price">Rs 90</span></span>
+                                    <button class="add-to-cart">Add to Cart</button>
+                                </li>
+                                <li>
+                                <span><strong>Cold Brew Coffee</strong> - Slow-brewed cold coffee for a smooth taste. <span class="price">Rs 100</span></span>
+                                    <button class="add-to-cart">Add to Cart</button>
+                                </li>
+                                <li>
+                                    <span><strong>Iced Coffee</strong> - Chilled coffee served over ice. <span class="price">Rs 80</span></span>
+                                    <button class="add-to-cart">Add to Cart</button>
+                                </li>
+                                <li>
+                                    <span><strong>Macchiato</strong> - Espresso with a dollop of steamed milk. <span class="price">Rs 70</span></span>
+                                    <button class="add-to-cart">Add to Cart</button>
+                                </li>
+                                <li>
+                                    <span><strong>Flat White</strong> - Espresso with microfoam milk. <span class="price">Rs 80</span></span>
+                                    <button class="add-to-cart">Add to Cart</button>
+                                </li>
+                                <li>
+                                    <span><strong>Affogato</strong> - A shot of espresso poured over vanilla ice cream. <span class="price">Rs 90</span></span>
+                                    <button class="add-to-cart">Add to Cart</button>
+                                </li>
+                                <!-- Add more items as needed -->
+                            </ul>
+                        </div>
+                    
+
+            <section id="menu-duck-donalds" class="menu-section" style="display: none;">
+                <h2>Duck Donald's Menu</h2>
+                     
+                        <!-- Juices -->
+                        <div class="menu-category">
+                            <h3>Juices</h3>
+                            <ul>
+                                <li>
+                                    <span><strong>Orange Juice</strong> - Freshly squeezed oranges. <span class="price">Rs 30</span></span>
+                                    <button class="add-to-cart" data-name="Orange Juice" data-price="30">Add to Cart</button>
+                                </li>
+                                <li>
+                                    <span><strong>Apple Juice</strong> - Crisp and refreshing apple juice. <span class="price">Rs 50</span></span>
+                                    <button class="add-to-cart">Add to Cart</button>
+                                        </li>
+                                        <li>
+                                            <span><strong>Mango Smoothie</strong> - Mango puree blended with yogurt. <span class="price">Rs 60</span></span>
+                                            <button class="add-to-cart">Add to Cart</button>
+                                        </li>
+                                        <li>
+                                            <span><strong>Pineapple Juice</strong> - Sweet and tangy pineapple juice. <span class="price">Rs 50</span></span>
+                                            <button class="add-to-cart">Add to Cart</button>
+                                        </li>
+                                        <li>
+                                            <span><strong>Carrot Juice</strong> - Freshly pressed carrots with a hint of ginger. <span class="price">Rs 60</span></span>
+                                            <button class="add-to-cart">Add to Cart</button>
+                                        </li>
+                                        <li>
+                                            <span><strong>Watermelon Juice</strong> - Juicy watermelon with a touch of mint.. <span class="price">Rs 30</span></span>
+                                            <button class="add-to-cart">Add to Cart</button>
+                                        </li>
+                                        <li>
+                                            <span><strong>Mixed Berry Juice</strong> - A blend of strawberries, blueberries, and raspberries. <span class="price">Rs 50</span></span>
+                                            <button class="add-to-cart">Add to Cart</button>
+                                        </li>
+                                        <li>
+                                            <span><strong>Pomegranate Juice</strong> - Pure and rich pomegranate juice. <span class="price">Rs 50</span></span>
+                                            <button class="add-to-cart">Add to Cart</button>
+                                        </li>
+                                        <li>
+                                            <span><strong>Grapefruit Juice</strong> - Freshly squeezed grapefruit with a hint of honey. <span class="price">Rs 60</span></span>
+                                            <button class="add-to-cart">Add to Cart</button>
+                                        </li>
+                                        <li>
+                                            <span><strong>Cucumber Lemonade</strong> - Refreshing cucumber mixed with lemonade. <span class="price">Rs 40</span></span>
+                                            <button class="add-to-cart">Add to Cart</button>
+                                        </li>
+                                        <!-- Add more items as needed -->
+                                    </ul>
+                                </div>
+                            
+                                <!-- Tea -->
+                                <div class="menu-category">
+                                    <h3>Tea</h3>
+                                    <ul>
+                                        <li>
+                                            <span><strong>Normal tea</strong> - Hot and refreshing milk tea. <span class="price">Rs 15</span></span>
+                                            <button class="add-to-cart">Add to Cart</button>
+                                        </li>
+                                        <li>
+                                            <span><strong>Green Tea</strong> - Steamed green tea leaves for a mild flavor. <span class="price">Rs 20</span></span>
+                                            <button class="add-to-cart">Add to Cart</button>
+                                        </li>
+                                        <li>
+                                            <span><strong>Masala tea</strong> - Spiced tea with steamed milk and a hint of cinnamon. <span class="price">Rs 25</span></span>
+                                            <button class="add-to-cart">Add to Cart</button>
+                                        </li>
+                                        <li>
+                                            <span><strong>Herbal Tea</strong> - A soothing blend of chamomile, mint, and lavender. <span class="price">Rs 30</span></span>
+                                            <button class="add-to-cart">Add to Cart</button>
+                                        </li>
+                                        <li>
+                                            <span><strong>Elaichi tea</strong> - Frothy green tea powder mixed with steamed milk. <span class="price">Rs 20</span></span>
+                                            <button class="add-to-cart">Add to Cart</button>
+                                        </li>
+                                        <li>
+                                            <span><strong>Classic Iced Tea</strong> - Cold and refreshing black tea with lemon. <span class="price">Rs 20</span></span>
+                                            <button class="add-to-cart">Add to Cart</button>
+                                        </li>
+                                        <li>
+                                            <span><strong>Rose Tea</strong> - Hot and refreshing milk tea with a touch of rose. <span class="price">Rs 35</span></span>
+                                            <button class="add-to-cart">Add to Cart</button>
+                                        </li>
+                                        <li>
+                                            <span><strong>Malai Tea</strong> - Soothing milk tea with malai. <span class="price">Rs 35</span></span>
+                                            <button class="add-to-cart">Add to Cart</button>
+                                        </li>
+                                        <li>
+                                            <span><strong>Chocolate Tea</strong> - Cold and refreshing iced tea with dark chocolates. <span class="price">Rs 40</span></span>
+                                            <button class="add-to-cart">Add to Cart</button>
+                                        </li>
+                                        <li>
+                                            <span><strong>Lemon Tea</strong> - Cold and refreshing black tea with lemon and pudina leaves. <span class="price">Rs 35</span></span>
+                                            <button class="add-to-cart">Add to Cart</button>
+                                        </li>
+                                        <!-- Add more items as needed -->
+                                    </ul>
+                                </div>
+                            
+                                <!-- Coffee -->
+                                <div class="menu-category">
+                                    <h3>Coffee</h3>
+                                    <ul>
+                                        <li>
+                                            <span><strong>Espresso</strong> - Strong and bold shot of coffee. <span class="price">Rs 50</span></span>
+                                            <button class="add-to-cart">Add to Cart</button>
+                                        </li>
+                                        <li>
+                                            <span><strong>Cappuccino</strong> - Espresso with steamed milk and a layer of foam. <span class="price">Rs 60</span></span>
+                                            <button class="add-to-cart">Add to Cart</button>
+                                        </li>
+                                        <li>
+                                            <span><strong>Latte</strong> - Smooth espresso mixed with steamed milk. <span class="price">Rs 70</span></span>
+                                            <button class="add-to-cart">Add to Cart</button>
+                                        </li>
+                                        <li>
+                                            <span><strong>Mocha</strong> - Espresso with chocolate and steamed milk. <span class="price">Rs 80</span></span>
+                                            <button class="add-to-cart">Add to Cart</button>
+                                        </li>
+                                        <li>
+                                            <span><strong>Americano</strong> - Espresso diluted with hot water. <span class="price">Rs 90</span></span>
+                                            <button class="add-to-cart">Add to Cart</button>
+                                        </li>
+                                        <li>
+                                        <span><strong>Cold Brew Coffee</strong> - Slow-brewed cold coffee for a smooth taste. <span class="price">Rs 100</span></span>
+                                            <button class="add-to-cart">Add to Cart</button>
+                                        </li>
+                                        <li>
+                                            <span><strong>Iced Coffee</strong> - Chilled coffee served over ice. <span class="price">Rs 80</span></span>
+                                            <button class="add-to-cart">Add to Cart</button>
+                                        </li>
+                                        <li>
+                                            <span><strong>Macchiato</strong> - Espresso with a dollop of steamed milk. <span class="price">Rs 70</span></span>
+                                            <button class="add-to-cart">Add to Cart</button>
+                                        </li>
+                                        <li>
+                                            <span><strong>Flat White</strong> - Espresso with microfoam milk. <span class="price">Rs 80</span></span>
+                                            <button class="add-to-cart">Add to Cart</button>
+                                        </li>
+                                        <li>
+                                            <span><strong>Affogato</strong> - A shot of espresso poured over vanilla ice cream. <span class="price">Rs 90</span></span>
+                                            <button class="add-to-cart">Add to Cart</button>
+                                        </li>
+                                        <!-- Add more items as needed -->
+                                    </ul>
+                                </div>
+                            
+                                <!-- Ice Cream -->
+                                <div class="menu-category">
+                                    <h3>Ice Cream</h3>
+                                    <ul>
+                                        <li>
+                                            <span><strong>Vanilla Ice Cream</strong> - Classic creamy vanilla. <span class="price">Rs 40</span></span>
+                                            <button class="add-to-cart">Add to Cart</button>
+                                        </li>
+                                        <li>
+                                            <span><strong>Chocolate Ice Cream</strong> - Rich and smooth chocolate flavor. <span class="price">Rs 50</span></span>
+                                            <button class="add-to-cart">Add to Cart</button>
+                                        </li>
+                                        <li>
+                                            <span><strong>Strawberry Ice Cream</strong> - Sweet and fruity strawberry. <span class="price">Rs 45</span></span>
+                                            <button class="add-to-cart">Add to Cart</button>
+                                        </li>
+                                        <li>
+                                            <span><strong>Mint Chocolate Chip</strong> - Cool mint with chocolate chips. <span class="price">Rs 60</span></span>
+                                            <button class="add-to-cart">Add to Cart</button>
+                                        </li>
+                                        <li>
+                                            <span><strong>Cookie Dough Ice Cream</strong> - Vanilla ice cream with chunks of cookie dough. <span class="price">Rs 70</span></span>
+                                            <button class="add-to-cart">Add to Cart</button>
+                                        </li>
+                                        <li>
+                                            <span><strong>Rocky Road Ice Cream</strong> - Chocolate ice cream with marshmallows and nuts. <span class="price">Rs 80</span></span>
+                                            <button class="add-to-cart">Add to Cart</button>
+                                        </li>
+                                        <li>
+                                            <span><strong>Butter Pecan Ice Cream</strong> - Creamy ice cream with toasted pecans. <span class="price">Rs 80</span></span>
+                                            <button class="add-to-cart">Add to Cart</button>
+                                        </li>
+                                        <li>
+                                            <span><strong>Coffee Ice Cream</strong> - Rich coffee-flavored ice cream. <span class="price">Rs 60</span></span>
+                                            <button class="add-to-cart">Add to Cart</button>
+                                        </li>
+                                        <li>
+                                            <span><strong>Mango Sorbet</strong> - Refreshing and fruity mango sorbet. <span class="price">Rs 70</span></span>
+                                            <button class="add-to-cart">Add to Cart</button>
+                                        </li>
+                                        <li>
+                                            <span><strong>Pistachio Ice Cream</strong> - Nutty and creamy pistachio flavor. <span class="price">Rs 90</span></span>
+                                            <button class="add-to-cart">Add to Cart</button>
+                                        </li>
+                                        <!-- Add more items as needed -->
+                                    </ul>
+                                </div>
+                            </section>
+                            
+
+                            <script src="cart.js"></script>
+
+    <script>
+    function showMenu(shop) {
+        // Hide all menus
+        document.getElementById('menu-sunny-days').style.display = 'none';
+        document.getElementById('menu-irani-chai').style.display = 'none';
+        document.getElementById('menu-duck-donalds').style.display = 'none';
+
+        // Show selected shop's menu
+        document.getElementById(`menu-${shop}`).style.display = 'block';
+    }
+</script>
+<script>
+    // Function to add item to cart
+    function addToCart(name, price) {
+        // Get cart from local storage, or create a new empty array if none exists
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Check if the item is already in the cart
+        let item = cart.find(item => item.name === name);
+        if (item) {
+            // If item exists, increase its quantity
+            item.quantity += 1;
+        } else {
+            // If not, add a new item to the cart
+            cart.push({ name, price, quantity: 1 });
+        }
+
+        // Save the updated cart to local storage
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartCount();
+    }
+
+    // Function to update cart count in the navigation bar
+    function updateCartCount() {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let cartCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+        document.getElementById('cart-count').innerText = cartCount;
+    }
+
+    // Attach event listeners to all "Add to Cart" buttons
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', () => {
+                const name = button.getAttribute('data-name');
+                const price = parseFloat(button.getAttribute('data-price'));
+                addToCart(name, price);
+            });
+        });
+
+        // Update cart count on page load
+        updateCartCount();
+    });
+</script>
+
+
+
+</body>
+</html>

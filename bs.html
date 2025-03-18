@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>breakfast & Snacks Menu</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navigation Bar Styles */
+nav {
+    background-color: #5cb85c;
+    padding: 10px 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Cart Styles */
+.cart {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+}
+
+.cart-icon {
+    margin-right: 8px;
+}
+
+/* Hero Section Styles */
+.hero {
+    background-image: url('juice-background.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 24px;
+}
+
+/* Background Image for the Hero Section */
+.hero {
+    background-image: url('https://cdn.prod.website-files.com/64931d2aee18510b47f4bb1f/65c3cdd12a6be3fb8cca3a33_dosa.jpeg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    height: 30vh; /* Full viewport height */
+}
+
+
+/* Shop Selection Section */
+.shop-section {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.shop-buttons button {
+    background-color: #5cb85c;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.shop-buttons button:hover {
+    background-color: #5cb85c;
+}
+
+/* Menu Section Styles */
+
+.menu-section {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.menu-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 36px;
+    color: #333;
+}
+
+.menu-category {
+    margin-bottom: 30px;
+}
+
+.menu-category h3 {
+    font-size: 24px;
+    color: #5cb85c;
+    margin-bottom: 10px;
+}
+
+.menu-category ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu-category li {
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.price {
+    font-weight: bold;
+    color: #333;
+}
+
+.menu-section {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+.menu-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 36px;
+    color: #333;
+}
+
+.menu-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.menu-item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.menu-item h3 {
+    margin-top: 0;
+    color: #5cb85c;
+}
+
+.price {
+    font-weight: bold;
+    color: #333;
+}
+
+button {
+    background-color: #5cb85c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #5cb85c;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">Breakfast & Snacks</a>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="jb.html">Juice & Beverages</a></li>
+                <li><a href="#bs">Breakfast & Snacks</a></li>
+                <li><a href="mc.html">Main Courses</a></li>
+                <li><a href="cart.html">View Cart</a></li>
+            </ul>
+            <div class="cart">
+                <span class="cart-icon">🛒</span>
+                <span id="cart-count">0</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>Welcome to Breakfast & Snacks</h1>
+        <p>Choose your favorite shop to see the menu</p>
+    </section>
+
+   <!-- Shop Selection -->
+<section id="shops" class="shop-section">
+    <h2>Select a Shop</h2>
+    <div class="shop-buttons">
+        <button onclick="showMenu('duck-donalds')">Duck Donald's</button>
+        <button onclick="showMenu('andhra-tiffin')">Andhra Tiffin</button>
+        <button onclick="showMenu('emo')">Emo</button>
+    </div>
+</section>
+
+
+    <!-- Menu Sections -->
+    <section id="menu-duck-donalds" class="menu-section" style="display: none;">
+        <h2>Duck Donald's Menu</h2>
+
+                    <!-- Sandwich -->
+                    <div class="menu-category">
+                        <h3>Sandwiches</h3>
+                        <ul>
+                            <li>
+                                <span><strong>Grilled Cheese Sandwich</strong> - Classic melted cheese on toasted bread. <span class="price">Rs 40</span></span>
+                                <button class="add-to-cart" data-name="Grilled Cheese Sandwich" data-price="5.00">Add to Cart</button>
+                            </li>
+                            <li>
+                                <span><strong>Veggie Sandwich</strong> - Fresh vegetables with hummus on whole-grain bread. <span class="price">Rs 30</span></span>
+                                <button class="add-to-cart" data-name="Veggie Sandwich" data-price="6.00">Add to Cart</button>
+                            </li>
+                            <li>
+                                <span><strong>Chicken Club Sandwich</strong> - Chicken, bacon, lettuce, and tomato. <span class="price">Rs 80</span></span>
+                                <button class="add-to-cart" data-name="Chicken Club Sandwich" data-price="7.50">Add to Cart</button>
+                            </li>
+                            <li>
+                                <span><strong>Tuna Melt Sandwich</strong> - Tuna salad with melted cheese on a grilled sandwich. <span class="price">Rs 60</span></span>
+                                <button class="add-to-cart" data-name="Tuna Melt Sandwich" data-price="7.00">Add to Cart</button>
+                            </li>
+                            <li>
+                                <span><strong>BLT Sandwich</strong> - Bacon, lettuce, and tomato on toasted bread. <span class="price">Rs 50</span></span>
+                                <button class="add-to-cart" data-name="BLT Sandwich" data-price="6.50">Add to Cart</button>
+                            </li>
+                            <li>
+                                <span><strong>Egg Salad Sandwich</strong> - Creamy egg salad on soft bread. <span class="price">Rs 40</span></span>
+                                <button class="add-to-cart" data-name="Egg Salad Sandwich" data-price="5.50">Add to Cart</button>
+                            </li>
+                            <li>
+                                <span><strong>Turkey Avocado Sandwich</strong> - Turkey breast with avocado and lettuce. <span class="price">Rs 90</span></span>
+                                <button class="add-to-cart" data-name="Turkey Avocado Sandwich" data-price="8.00">Add to Cart</button>
+                            </li>
+                            <li>
+                                <span><strong>Ham and Cheese Sandwich</strong> - Ham with cheddar cheese on rye bread. <span class="price">Rs 80</span></span>
+                                <button class="add-to-cart" data-name="Ham and Cheese Sandwich" data-price="6.00">Add to Cart</button>
+                            </li>
+                            <li>
+                                <span><strong>Caprese Sandwich</strong> - Mozzarella, tomato, and basil with balsamic drizzle. <span class="price">Rs 70</span></span>
+                                <button class="add-to-cart" data-name="Caprese Sandwich" data-price="7.00">Add to Cart</button>
+                            </li>
+                            <li>
+                                <span><strong>Roast Chicken Sandwich</strong> - Thinly sliced roast chicken with horseradish mayo. <span class="price">Rs 90</span></span>
+                                <button class="add-to-cart" data-name="Roast Chicken Sandwich" data-price="8.50">Add to Cart</button>
+                            </li>
+                        </ul>
+                    </div>
+                
+                    <!-- Maggie -->
+                    <div class="menu-category">
+                        <h3>Maggie</h3>
+                        <ul>
+                            <li>
+                                <span><strong>Classic Maggie</strong> - Simple and delicious noodles. <span class="price">Rs 30</span></span>
+                                <button class="add-to-cart" data-name="Classic Maggie" data-price="4.00">Add to Cart</button>
+                            </li>
+                            <li>
+                                <span><strong>Cheese Maggie</strong> - Maggie topped with melted cheese. <span class="price">Rs 40</span></span>
+                                <button class="add-to-cart" data-name="Cheese Maggie" data-price="5.00">Add to Cart</button>
+                            </li>
+                            <li>
+                                <span><strong>Veggie Maggie</strong> - Maggie with fresh vegetables. <span class="price">Rs 45</span></span>
+                                <button class="add-to-cart" data-name="Veggie Maggie" data-price="5.50">Add to Cart</button>
+                            </li>
+                            <li>
+                                <span><strong>Spicy Maggie</strong> - Maggie with a kick of spices. <span class="price">Rs 50</span></span>
+                                <button class="add-to-cart" data-name="Spicy Maggie" data-price="5.00">Add to Cart</button>
+                            </li>
+                            <li>
+                                <span><strong>Egg Maggie</strong> - Maggie topped with scrambled eggs. <span class="price">Rs 45</span></span>
+                                <button class="add-to-cart" data-name="Egg Maggie" data-price="5.50">Add to Cart</button>
+                            </li>
+                            <li>
+                                <span><strong>Chicken Maggie</strong> - Maggie with tender chicken pieces. <span class="price">Rs 60</span></span>
+                                <button class="add-to-cart" data-name="Chicken Maggie" data-price="6.50">Add to Cart</button>
+                            </li>
+                            <li>
+                                <span><strong>Masala Maggie</strong> - Maggie cooked with special masala. <span class="price">Rs 50</span></span>
+                                <button class="add-to-cart" data-name="Masala Maggie" data-price="4.50">Add to Cart</button>
+                            </li>
+                            <li>
+                                <span><strong>Pav Bhaji Maggie</strong> - Maggie mixed with Pav Bhaji flavors. <span class="price">Rs 70</span></span>
+                                <button class="add-to-cart" data-name="Pav Bhaji Maggie" data-price="6.00">Add to Cart</button>
+                            </li>
+                            <li>
+                                <span><strong>Garlic Maggie</strong> - Maggie with a hint of garlic. <span class="price">Rs 70</span></span>
+                                <button class="add-to-cart" data-name="Garlic Maggie" data-price="4.50">Add to Cart</button>
+                            </li>
+                            <li>
+                                <span><strong>Paneer Maggie</strong> - Maggie with chunks of paneer. <span class="price">Rs 60</span></span>
+                                <button class="add-to-cart" data-name="Paneer Maggie" data-price="6.00">Add to Cart</button>
+                            </li>
+                        </ul>
+                    </div>
+                
+                    <!-- Omelette -->
+                    <div class="menu-category">
+                        <h3>Omelettes</h3>
+                        <ul>
+                            <li>
+                                <span><strong>Classic Omelette</strong> - Simple egg omelette with seasoning. <span class="price">Rs 40</span></span>
+                                <button class="add-to-cart" data-name="Classic Omelette" data-price="4.00">Add to Cart</button>
+                            </li>
+                            <li>
+                                <span><strong>Cheese Omelette</strong> - Omelette stuffed with melted cheese. <span class="price">Rs 50</span></span>
+                                <button class="add-to-cart" data-name="Cheese Omelette" data-price="5.00">Add to Cart</button>
+                            </li>
+                            <li>
+                                <span><strong>Veggie Omelette</strong> - Omelette with mixed vegetables. <span class="price">Rs 45</span></span>
+                                <button class="add-to-cart" data-name="Veggie Omelette" data-price="5.50">Add to Cart</button>
+                            </li>
+                            <li>
+                                <span><strong>Spanish Omelette</strong> - Omelette with potatoes and onions. <span class="price">Rs 60</span></span>
+                                <button class="add-to-cart" data-name="Spanish Omelette" data-price="6.00">Add to Cart</button>
+                            </li>
+                            <li>
+                                <span><strong>Masala Omelette</strong> - Spicy Indian-style omelette. <span class="price">Rs 50</span></span>
+                                <button class="add-to-cart" data-name="Masala Omelette" data-price="5.00">Add to Cart</button>
+                            </li>
+                            <li>
+                                <span><strong>Mushroom Omelette</strong> - Omelette with sautéed mushrooms. <span class="price">Rs 70</span></span>
+                                <button class="add-to-cart" data-name="Mushroom Omelette" data-price="5.50">Add to Cart</button>
+                            </li>
+                            <li>
+                                <span><strong>Chicken Omelette</strong> - Omelette with diced chicken. <span class="price">Rs 80</span></span>
+                                <button class="add-to-cart" data-name="Chicken Omelette" data-price="6.50">Add to Cart</button>
+                            </li>
+                            <li>
+                                <span><strong>Cheese & Onion Omelette</strong> - Omelette with cheese and caramelized onions. <span class="price">Rs 60</span></span>
+                                <button class="add-to-cart" data-name="Cheese & Onion Omelette" data-price="5.50">Add to Cart</button>
+                            </li>
+                            <li>
+                                <span><strong>Tomato & Basil Omelette</strong> - Fresh tomatoes and basil in a fluffy omelette. <span class="price">Rs 60</span></span>
+                                <button class="add-to-cart" data-name="Tomato & Basil Omelette" data-price="5.00">Add to Cart</button>
+                            </li>
+                            <li>
+                                <span><strong>Ham & Cheese Omelette</strong> - Omelette with ham and cheddar cheese. <span class="price">Rs 70</span></span>
+                                <button class="add-to-cart" data-name="Ham & Cheese Omelette" data-price="6.00">Add to Cart</button>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                
+                     
+                <section id="menu-andhra-tiffin" class="menu-section" style="display: none;">
+                    <h2>Andhra Tiffin Menu</h2>
+        
+                            <!-- North Indian Tadka -->
+                            <div class="menu-category">
+                                <h3>North Indian Tadka</h3>
+                                <ul>
+                                    <li>
+                                        <span><strong>Pav Bhaji</strong> - Spicy mashed vegetables served with buttered pav. <span class="price">Rs 70</span></span>
+                                        <button class="add-to-cart" data-name="Pav Bhaji" data-price="7.00">Add to Cart</button>
+                                    </li>
+                                    <li>
+                                        <span><strong>Pani Puri</strong> - Crisp puris filled with spicy and tangy water. <span class="price">Rs 30</span></span>
+                                        <button class="add-to-cart" data-name="Pani Puri" data-price="5.00">Add to Cart</button>
+                                    </li>
+                                    <li>
+                                        <span><strong>Aloo Tikki Chaat</strong> - Crispy potato patties topped with chutneys and yogurt. <span class="price">Rs 40</span></span>
+                                        <button class="add-to-cart" data-name="Aloo Tikki Chaat" data-price="6.50">Add to Cart</button>
+                                    </li>
+                                    <li>
+                                        <span><strong>Chole Bhature</strong> - Spicy chickpeas served with fried bread. <span class="price">Rs 80</span></span>
+                                        <button class="add-to-cart" data-name="Chole Bhature" data-price="8.00">Add to Cart</button>
+                                    </li>
+                                    <li>
+                                        <span><strong>Rajma Chawal</strong> - Rajma beans cooked in spices served over rice. <span class="price">Rs 75</span></span>
+                                        <button class="add-to-cart" data-name="Rajma Chawal" data-price="7.50">Add to Cart</button>
+                                    </li>
+                                    <li>
+                                        <span><strong>Dahi Puri</strong> - Crispy puris filled with yogurt and chutneys. <span class="price">Rs 50</span></span>
+                                        <button class="add-to-cart" data-name="Dahi Puri" data-price="5.50">Add to Cart</button>
+                                    </li>
+                                    <li>
+                                        <span><strong>Paneer Tikka</strong> - Grilled cottage cheese marinated in spices. <span class="price">Rs 80</span></span>
+                                        <button class="add-to-cart" data-name="Paneer Tikka" data-price="9.00">Add to Cart</button>
+                                    </li>
+                                    <li>
+                                        <span><strong>Sev Puri</strong> - Crisp puris topped with potatoes, chutneys, and sev. <span class="price">Rs 50</span></span>
+                                        <button class="add-to-cart" data-name="Sev Puri" data-price="5.00">Add to Cart</button>
+                                    </li>
+                                    <li>
+                                        <span><strong>Kachori Chaat</strong> - Spicy stuffed pastry topped with chutneys. <span class="price">Rs 70</span></span>
+                                        <button class="add-to-cart" data-name="Kachori Chaat" data-price="6.00">Add to Cart</button>
+                                    </li>
+                                    <li>
+                                        <span><strong>Samosa Chaat</strong> - Samosas topped with chickpeas, yogurt, and chutneys. <span class="price">Rs 80</span></span>
+                                        <button class="add-to-cart" data-name="Samosa Chaat" data-price="6.50">Add to Cart</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        
+                            <!-- South Indian Spices -->
+                            <div class="menu-category">
+                                <h3>South Indian Spices</h3>
+                                <ul>
+                                    <li>
+                                        <span><strong>Masala Dosa</strong> - Thin rice crepe filled with spicy potato masala. <span class="price">Rs 60</span></span>
+                                        <button class="add-to-cart" data-name="Masala Dosa" data-price="7.00">Add to Cart</button>
+                                    </li>
+                                    <li>
+                                        <span><strong>Idli Sambar</strong> - Steamed rice cakes served with lentil soup. <span class="price">Rs 50</span></span>
+                                        <button class="add-to-cart" data-name="Idli Sambar" data-price="6.00">Add to Cart</button>
+                                    </li>
+                                    <li>
+                                        <span><strong>Medu Vada</strong> - Crispy lentil doughnuts served with chutney and sambar. <span class="price">Rs 50</span></span>
+                                        <button class="add-to-cart" data-name="Medu Vada" data-price="6.50">Add to Cart</button>
+                                    </li>
+                                    <li>
+                                        <span><strong>Uttapam</strong> - Thick pancake topped with vegetables and spices. <span class="price">Rs 70</span></span>
+                                        <button class="add-to-cart" data-name="Uttapam" data-price="7.00">Add to Cart</button>
+                                    </li>
+                                    <li>
+                                        <span><strong>Pongal</strong> - Savory rice and lentil dish tempered with spices. <span class="price">Rs 60</span></span>
+                                        <button class="add-to-cart" data-name="Pongal" data-price="6.50">Add to Cart</button>
+                                    </li>
+                                    <li>
+                                        <span><strong>Rava Dosa</strong> - Crispy semolina crepe served with chutney. <span class="price">Rs 70</span></span>
+                                        <button class="add-to-cart" data-name="Rava Dosa" data-price="7.50">Add to Cart</button>
+                                    </li>
+                                    <li>
+                                        <span><strong>Paneer Dosa</strong> - Dosa stuffed with paneer and spices. <span class="price">Rs 80</span></span>
+                                        <button class="add-to-cart" data-name="Paneer Dosa" data-price="8.50">Add to Cart</button>
+                                    </li>
+                                    <li>
+                                        <span><strong>Onion Uttapam</strong> - Thick pancake topped with onions and chilies. <span class="price">Rs 75</span></span>
+                                        <button class="add-to-cart" data-name="Onion Uttapam" data-price="7.00">Add to Cart</button>
+                                    </li>
+                                    <li>
+                                        <span><strong>Appam with Stew</strong> - Soft rice pancakes served with vegetable stew. <span class="price">Rs 80</span></span>
+                                        <button class="add-to-cart" data-name="Appam with Stew" data-price="8.00">Add to Cart</button>
+                                    </li>
+                                    <li>
+                                        <span><strong>Veg Biryani</strong> - Spiced rice with vegetables and fragrant spices. <span class="price">Rs 90</span></span>
+                                        <button class="add-to-cart" data-name="Vegetable Biryani" data-price="9.00">Add to Cart</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
+                        
+
+                        <section id="menu-emo" class="menu-section" style="display: none;">
+                            <h2>Emo Menu</h2>
+                        
+                                
+                                    <!-- Burger -->
+                                    <div class="menu-category">
+                                        <h3>Burgers</h3>
+                                        <ul>
+                                            <li>
+                                                <span><strong>Classic veg Burger</strong> - Juicy  aloo patty with lettuce, tomato, and cheese. <span class="price">Rs 110</span></span>
+                                                <button class="add-to-cart" data-name="Classic veg Burger" data-price="8.00">Add to Cart</button>
+                                            </li>
+                                            <li>
+                                                <span><strong>Chicken Burger</strong> - Grilled chicken breast with lettuce and mayo. <span class="price">Rs 130</span></span>
+                                                <button class="add-to-cart" data-name="Chicken Burger" data-price="7.50">Add to Cart</button>
+                                            </li>
+                                            <li>
+                                                <span><strong>Veggie Burger</strong> - Plant-based patty with avocado and tomato. <span class="price">Rs 100</span></span>
+                                                <button class="add-to-cart" data-name="Veggie Burger" data-price="7.00">Add to Cart</button>
+                                            </li>
+                                            <li>
+                                                <span><strong>Cheeseburger</strong> - Classic burger with melted cheddar cheese. <span class="price">Rs 150</span></span>
+                                                <button class="add-to-cart" data-name="Cheeseburger" data-price="8.50">Add to Cart</button>
+                                            </li>
+                                            <li>
+                                                <span><strong>Prawn Burger</strong> - Prawn patty topped with crispy bacon. <span class="price">Rs 180</span></span>
+                                                <button class="add-to-cart" data-name="Prawn Burger" data-price="9.00">Add to Cart</button>
+                                            </li>
+                                            <li>
+                                                <span><strong>Mushroom Swiss Burger</strong> - Burger with sautéed mushrooms and Swiss cheese. <span class="price">Rs 130</span></span>
+                                                <button class="add-to-cart" data-name="Mushroom Swiss Burger" data-price="9.00">Add to Cart</button>
+                                            </li>
+                                            <li>
+                                                <span><strong>BBQ Burger</strong> - Chicken patty with BBQ sauce and onion rings. <span class="price">Rs 180</span></span>
+                                                <button class="add-to-cart" data-name="BBQ Burger" data-price="9.50">Add to Cart</button>
+                                            </li>
+                                            <li>
+                                                <span><strong>Double Cheeseburger</strong> - Two chicken patties with double cheese. <span class="price">Rs 200</span></span>
+                                                <button class="add-to-cart" data-name="Double Cheeseburger" data-price="10.50">Add to Cart</button>
+                                            </li>
+                                            <li>
+                                                <span><strong>Spicy Jalapeño Burger</strong> - Burger with spicy jalapeños and pepper jack cheese. <span class="price">Rs 210</span></span>
+                                                <button class="add-to-cart" data-name="Spicy Jalapeño Burger" data-price="8.50">Add to Cart</button>
+                                            </li>
+                                            <li>
+                                                <span><strong>Turkey Burger</strong> - Lean turkey patty with cranberry sauce. <span class="price">Rs 230</span></span>
+                                                <button class="add-to-cart" data-name="Turkey Burger" data-price="8.00">Add to Cart</button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                
+                                    <!-- Pizza -->
+                                    <div class="menu-category">
+                                        <h3>Pizzas</h3>
+                                        <ul>
+                                            <li>
+                                                <span><strong>Margherita Pizza</strong> - Fresh tomatoes, basil, and mozzarella. <span class="price">Rs 130</span></span>
+                                                <button class="add-to-cart" data-name="Margherita Pizza" data-price="10.00">Add to Cart</button>
+                                            </li>
+                                            <li>
+                                                <span><strong>Pepperoni Pizza</strong> - Classic pepperoni and mozzarella. <span class="price">Rs 140</span></span>
+                                                <button class="add-to-cart" data-name="Pepperoni Pizza" data-price="11.00">Add to Cart</button>
+                                            </li>
+                                            <li>
+                                                <span><strong>BBQ Chicken Pizza</strong> - BBQ sauce, chicken, onions, and cheese. <span class="price">Rs 180</span></span>
+                                                <button class="add-to-cart" data-name="BBQ Chicken Pizza" data-price="12.00">Add to Cart</button>
+                                            </li>
+                                            <li>
+                                                <span><strong>Veggie Pizza</strong> - Mushrooms, peppers, onions, and olives. <span class="price">Rs 120</span></span>
+                                                <button class="add-to-cart" data-name="Veggie Pizza" data-price="10.50">Add to Cart</button>
+                                            </li>
+                                            <li>
+                                                <span><strong>Hawaiian Pizza</strong> - Ham, pineapple, and mozzarella. <span class="price">Rs 150</span></span>
+                                                <button class="add-to-cart" data-name="Hawaiian Pizza" data-price="11.50">Add to Cart</button>
+                                            </li>
+                                            <li>
+                                                <span><strong>Meat Lovers Pizza</strong> - Pepperoni, sausage, bacon, and ham. <span class="price">Rs 190</span></span>
+                                                <button class="add-to-cart" data-name="Meat Lovers Pizza" data-price="13.00">Add to Cart</button>
+                                            </li>
+                                            <li>
+                                                <span><strong>Four Cheese Pizza</strong> - A blend of mozzarella, cheddar, parmesan, and blue cheese. <span class="price">Rs 200</span></span>
+                                                <button class="add-to-cart" data-name="Four Cheese Pizza" data-price="12.00">Add to Cart</button>
+                                            </li>
+                                            <li>
+                                                <span><strong>Spinach & Feta Pizza</strong> - Spinach, feta, and garlic. <span class="price">Rs 140</span></span>
+                                                <button class="add-to-cart" data-name="Spinach & Feta Pizza" data-price="11.00">Add to Cart</button>
+                                            </li>
+                                            <li>
+                                                <span><strong>Paneer Chicken Pizza</strong> - Spicy paneer sauce, chicken, and blue cheese. <span class="price">Rs 220</span></span>
+                                                <button class="add-to-cart" data-name="Paneer Chicken Pizza" data-price="12.50">Add to Cart</button>
+                                            </li>
+                                            <li>
+                                                <span><strong>White Pizza</strong> - Ricotta, mozzarella, and garlic. <span class="price">Rs 200</span></span>
+                                                <button class="add-to-cart" data-name="White Pizza" data-price="11.00">Add to Cart</button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                
+                                    <!-- Pasta -->
+                                    <div class="menu-category">
+                                        <h3>Pasta</h3>
+                                        <ul>
+                                            <li>
+                                                <span><strong>Spaghetti Bolognese</strong> - Classic spaghetti with a rich meat sauce. <span class="price">Rs 150</span></span>
+                                                <button class="add-to-cart" data-name="Spaghetti Bolognese" data-price="11.00">Add to Cart</button>
+                                            </li>
+                                            <li>
+                                                <span><strong>Fettuccine Alfredo</strong> - Creamy Alfredo sauce with fettuccine pasta. <span class="price">Rs 180</span></span>
+                                                <button class="add-to-cart" data-name="Fettuccine Alfredo" data-price="12.00">Add to Cart</button>
+                                            </li>
+                                            <li>
+                                                <span><strong>Penne Arrabbiata</strong> - Spicy tomato sauce with penne pasta. <span class="price">rs 200</span></span>
+                                                <button class="add-to-cart" data-name="Penne Arrabbiata" data-price="10.50">Add to Cart</button>
+                                            </li>
+                                            <li>
+                                                <span><strong>Lasagna</strong> - Layers of pasta, meat, and cheese baked to perfection. <span class="price">Rs 250</span></span>
+                                                <button class="add-to-cart" data-name="Lasagna" data-price="13.00">Add to Cart</button>
+                                            </li>
+                                            <li>
+                                                <span><strong>Macaroni & Cheese</strong> - Cheesy baked macaroni. <span class="price">Rs 200</span></span>
+                                                <button class="add-to-cart" data-name="Macaroni & Cheese" data-price="9.50">Add to Cart</button>
+                                            </li>
+                                            <li>
+                                                <span><strong>Pesto Pasta</strong> - Pasta tossed in a fresh basil pesto sauce. <span class="price">Rs 240</span></span>
+                                                <button class="add-to-cart" data-name="Pesto Pasta" data-price="11.50">Add to Cart</button>
+                                            </li>
+                                            <li>
+                                                <span><strong>Carbonara</strong> - Creamy sauce with pancetta and parmesan. <span class="price">Rs 250</span></span>
+                                                <button class="add-to-cart" data-name="Carbonara" data-price="12.50">Add to Cart</button>
+                                            </li>
+                                            <li>
+                                                <span><strong>Ravioli</strong> - Stuffed pasta with marinara sauce. <span class="price">Rs 250</span></span>
+                                                <button class="add-to-cart" data-name="Ravioli" data-price="11.50">Add to Cart</button>
+                                            </li>
+                                            <li>
+                                                <span><strong>Gnocchi</strong> - Soft potato dumplings in a tomato sauce. <span class="price">Rs 260</span></span>
+                                                <button class="add-to-cart" data-name="Gnocchi" data-price="10.50">Add to Cart</button>
+                                            </li>
+                                            <li>
+                                                <span><strong>Seafood Linguine</strong> - Pasta with shrimp, clams, and a garlic white wine sauce. <span class="price">Rs 300</span></span>
+                                                <button class="add-to-cart" data-name="Seafood Linguine" data-price="14.00">Add to Cart</button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </section>
+                                
+                                <script src="cart.js"></script>
+
+    <!-- JavaScript -->
+    <script>
+        function showMenu(shop) {
+            // Hide all menus
+            document.getElementById('menu-duck-donalds').style.display = 'none';
+            document.getElementById('menu-andhra-tiffin').style.display = 'none';
+            document.getElementById('menu-emo').style.display = 'none';
+
+            // Show selected shop's menu
+            document.getElementById(`menu-${shop}`).style.display = 'block';
+        }
+    </script>
+    <script>
+        // Function to add item to cart
+        function addToCart(name, price) {
+            // Get cart from local storage, or create a new empty array if none exists
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+            // Check if the item is already in the cart
+            let item = cart.find(item => item.name === name);
+            if (item) {
+                // If item exists, increase its quantity
+                item.quantity += 1;
+            } else {
+                // If not, add a new item to the cart
+                cart.push({ name, price, quantity: 1 });
+            }
+    
+            // Save the updated cart to local storage
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+        }
+    
+        // Function to update cart count in the navigation bar
+        function updateCartCount() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let cartCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+            document.getElementById('cart-count').innerText = cartCount;
+        }
+    
+        // Attach event listeners to all "Add to Cart" buttons
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.add-to-cart').forEach(button => {
+                button.addEventListener('click', () => {
+                    const name = button.getAttribute('data-name');
+                    const price = parseFloat(button.getAttribute('data-price'));
+                    addToCart(name, price);
+                });
+            });
+    
+            // Update cart count on page load
+            updateCartCount();
+        });
+    </script>
+    
+</body>
+</html>

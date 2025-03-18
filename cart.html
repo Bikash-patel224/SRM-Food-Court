@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>SRM FOOD COURT - Cart</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            background-color: #669653;
+            padding: 20px;
+        }
+
+        .center-text {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 50px;
+        }
+
+        /* Cart Container Styling */
+        .cart-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 320px;
+            text-align: center;
+            transform: translateY(10%);
+        }
+
+        h1 {
+            color: #272525d3;
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+        }
+
+        /* Cart Items Styling */
+        .cart-items {
+            text-align: left;
+            margin-bottom: 15px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            font-size: 0.9rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-item span {
+            font-weight: bold;
+            flex: 1;
+        }
+
+        .cart-item .price {
+            color: #333;
+            font-size: 0.9rem;
+        }
+
+        /* Quantity Buttons Styling */
+        .quantity-buttons {
+            display: flex;
+            gap: 5px;
+        }
+
+        .quantity-button {
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            padding: 4px 8px;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+
+        .quantity-button:hover {
+            background-color: #4cae4c;
+        }
+
+        /* Total Styling */
+        .total {
+            font-weight: bold;
+            font-size: 1rem;
+            margin: 15px 0;
+        }
+
+        /* Bottom Buttons Styling */
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        button {
+            width: 48%;
+            padding: 10px;
+            background-color: #5cb85c;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #4cae4c;
+        }
+
+        .home-button {
+            background-color: #d9534f;
+        }
+
+        .home-button:hover {
+            background-color: #c9302c;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h2 class="center-text">SRM FOOD COURT</h2>
+        <img src="media/srmlogo.png" alt="Logo" class="logo">
+    </div>
+
+    <div class="cart-container">
+        <h1>Your Cart</h1>
+        <div class="cart-items"></div>
+        <div class="total">Total: Rs </div>
+        <div class="buttons">
+            <button type="button" onclick="checkout()">Checkout</button>
+            <button type="button" class="home-button" onclick="location.href='home.html'">Home</button>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cartContainer = document.querySelector('.cart-items');
+            const totalElement = document.querySelector('.total');
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            function updateTotal() {
+                let total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+                totalElement.textContent = `Total: Rs ${total}`;
+            }
+
+            function saveCart() {
+                localStorage.setItem('cart', JSON.stringify(cart));
+            }
+
+            function renderCart() {
+                cartContainer.innerHTML = ''; // Clear current items
+                if (cart.length === 0) {
+                    cartContainer.innerHTML = '<p>Your cart is empty.</p>';
+                    updateTotal();
+                    return;
+                }
+                
+                cart.forEach((item, index) => {
+                    const itemElement = document.createElement('div');
+                    itemElement.classList.add('cart-item');
+                    itemElement.innerHTML = `
+                        <span>${item.name} (x${item.quantity})</span>
+                        <span class="price">Rs ${item.price * item.quantity}</span>
+                        <div class="quantity-buttons">
+                            <button class="quantity-button" onclick="decreaseQuantity(${index})">-</button>
+                            <button class="quantity-button" onclick="increaseQuantity(${index})">+</button>
+                        </div>
+                    `;
+                    cartContainer.appendChild(itemElement);
+                });
+
+                updateTotal();
+            }
+
+            window.increaseQuantity = function(index) {
+                cart[index].quantity += 1;
+                saveCart();
+                renderCart();
+            }
+
+            window.decreaseQuantity = function(index) {
+                if (cart[index].quantity > 1) {
+                    cart[index].quantity -= 1;
+                } else {
+                    cart.splice(index, 1); // Remove if quantity goes to 0
+                }
+                saveCart();
+                renderCart();
+            }
+
+            renderCart();
+        });
+
+        function checkout() {
+            alert('Proceeding to Checkout...');
+            localStorage.removeItem('cart');
+            location.href = 'checkout.html';
+        }
+    </script>
+</body>
+</html>
